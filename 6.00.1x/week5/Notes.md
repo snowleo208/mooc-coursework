@@ -97,3 +97,31 @@ Reasons to use getter
 > don't use `Animal.age = 12` directly even Python allows, always use getter and setter for best practices! :)
 
 # Hierarchies
+
+- subclass will use subclass's method, if you compare both object which are not in the same subclass may got Attribute Error.
+
+## Hierarchies using in this case
+
+Person
+^
+MITPerson
+^
+Student
+^
+Undergraduates / Transfer students / Graduates
+
+### Substition Principle
+
+- important behaviour of superclass **should be supported by all subclasses**
+
+e.g. `Student` can have subclass of Undergraduates, transfer students and graduates. Student can be the subclasses of `MITPerson`, which have unique student id. In this case, you can add as many `Student` subclasses as possible, as all `Student` subclasses inherit attributes from `MITPerson`.
+
+When you need attributes that needed to be shared between subclasses, create one more superclass to do so.
+
+# Modularity
+
+Isolating methods in class, make us easier to change its behaviour
+
+> can change base behaviour in `MITPerson` class, as all subclasses inherit that method
+> or change behaviour of a lower class in hierarchy, like from Undergraduates -> Student
+> modularize: capture a behaviour locally, in its own class only
