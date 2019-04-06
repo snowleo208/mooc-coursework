@@ -96,6 +96,8 @@ Reasons to use getter
 > prevent bugs
 > don't use `Animal.age = 12` directly even Python allows, always use getter and setter for best practices! :)
 
+---
+
 # Hierarchies
 
 - subclass will use subclass's method, if you compare both object which are not in the same subclass may got Attribute Error.
@@ -118,6 +120,8 @@ e.g. `Student` can have subclass of Undergraduates, transfer students and gradua
 
 When you need attributes that needed to be shared between subclasses, create one more superclass to do so.
 
+---
+
 # Modularity
 
 Isolating methods in class, make us easier to change its behaviour
@@ -125,3 +129,14 @@ Isolating methods in class, make us easier to change its behaviour
 > can change base behaviour in `MITPerson` class, as all subclasses inherit that method
 > or change behaviour of a lower class in hierarchy, like from Undergraduates -> Student
 > modularize: capture a behaviour locally, in its own class only
+
+**Don't expose your internal presentation**, the method should be `allStudents` rather than `students`:
+> hide your procedure in the object
+> just need to change inside procedures when you need, don't need to change method name once more
+> the usage of this object remains unchanged
+
+# Generators
+Can separate the concept of a long sequence of objects, from the actual process of computing them directly. Allows to generate a new item when it's needed, rather than throw out a big object.
+
+- use `yield` inside
+- use `__next__()` to get the next value
