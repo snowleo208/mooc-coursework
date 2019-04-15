@@ -2,7 +2,7 @@
 
 Learning Beginning Student Language (BSL) with some decent functions:
 
-```
+```racket
 (+ 1 2)
 (sqr 3) ;get 9
 (sqrt 16) ;get 4
@@ -19,7 +19,7 @@ Numbers and string are not same, so `(+ 3 "123")` prints error.
 
 You can create images also! For example:
 
-```
+```racket
 (require 2htdp/image)
 
 (circle 10 "solid" "red") ;print a red circle
@@ -45,7 +45,7 @@ You can create images also! For example:
 
 Create variables like this:
 
-```
+```racket
 ; (define <NAME> <EXPRESSION>)
 (define WIDTH 400)
 (define HEIGHT 600)
@@ -58,7 +58,7 @@ Create variables like this:
 
 Create function like this:
 
-```
+```racket
 (define (large x y)
   (if (> x y)
       x
@@ -78,7 +78,7 @@ Booleans:
 
 Compare: 
 
-```
+```racket
 (define WIDTH 100)
 (define HEIGHT 100)
 
@@ -89,7 +89,7 @@ Compare:
 
 ## IF Expressions
 
-```
+```racket
 (if <EXPRESSION>
        <EXPRESSION> ;if true, do this
        <EXPRESSION>)  ;if false, do this

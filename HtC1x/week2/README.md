@@ -43,7 +43,7 @@ Working through the videos and practice materials for this module should take ap
 
  Therefore you can use this format:
 
-```
+```racket
 ;; CountDown is one of:
 ;; - false
 ;; - Natural[1, 10]
@@ -57,7 +57,7 @@ Working through the videos and practice materials for this module should take ap
 
 In a mixed data itemization, data must be guarded from different data types, so the template should be:
 
-```
+```racket
 (define (fr-for-count-down cd)
   cond([(false? cd) (...)]
        [(and (number? c) (<= 1 c) (<= c 10) (...c)]

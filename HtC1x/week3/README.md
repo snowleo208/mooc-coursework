@@ -7,9 +7,3 @@ In this module you will learn how to design interactive programs that use the Dr
 - Be able to explain the inherent structure of interactive graphical programs.
 - Be able to use the How to Design Worlds (HtDW) recipe to design interactive programs with atomic world state.
 - Be able to read and write big-bang expressions.
-
----
-
-## Notes
-
-
