@@ -4,4 +4,4 @@ Welcome to How to Code: Simple Data - the first course in the UBCx Software Deve
 
 This course is using Beginning Student Language (BSL) and you can open it via DrRacket.
 
-My environment is Windows 10 and DrRacket version 7.2.
+> Note: My environment is Windows 10 / Linux with DrRacket version 7.2.
