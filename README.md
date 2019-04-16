@@ -6,13 +6,8 @@ Using my leisure time to learn new things, try to finish as much MOOCs as possib
 
 ## Introduction to CS
 
-- [6.00.1x Introduction to Computer Science and Programming Using Python MIT - Massachusetts Institute of Technology)](https://www.edx.org/course/introduction-to-computer-science-and-programming-using-python-0)
-- [HtC1x How to Code: Simple Data (University of British Columbia)](https://www.edx.org/course/how-code-simple-data-ubcx-htc1x)
-
-
-## Python
-
-- 6.00.1x Introduction to Computer Science and Programming Using Python
-
-## BSL / Racket
-- HtC1x How to Code: Simple Data (University of British Columbia)
+| Code        | University    | Course           | Languages(s)     | Status   |
+| ------------- |:-------------:| -------------:| -------------:|-------------:|
+| 6.00.1x       | MIT           | [6.00.1x Introduction to Computer Science and Programming Using Python)](https://www.edx.org/course/introduction-to-computer-science-and-programming-using-python-0) | Python | **Completed** |
+| HtC1x         | UBC           | [How to Code: Simple Data](https://www.edx.org/course/how-code-simple-data-ubcx-htc1x) | Racket | Processing |
+| CSE341         | University of Washington           | [Programming Languages, Part A](https://www.coursera.org/learn/programming-languages) | ML / Functional Programming | Processing |
