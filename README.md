@@ -1,6 +1,6 @@
 # Coursework for MOOCs
 
-Using my leisure time to learn new things, try to finish as much MOOCs as possible, not just included programming-realted course (maybe).
+Using my leisure time to learn new things, try to finish as much MOOCs as possible, not just included programming-related course (maybe).
 
 # Computer Science
 

@@ -1,0 +1,129 @@
+body {
+    font-family: 'Roboto', 'Open Sans', 'Gill Sans MT',
+    'Gill Sans', Corbel, Arial, 'sans-serif';
+    font-size: 1em;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    color: rgb(25, 25, 25);
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    display: block;
+    font-family: 'Lato', 'Open Sans', 'Gill Sans MT',
+    'Gill Sans', Corbel, Arial, 'sans-serif';
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+code {
+    display: block;
+    width: auto;
+    background: #f7f7f7;
+    padding: 0.5em 1em;
+    line-height: 2;
+    margin-bottom: 0.8em;
+}
+
+.navbar {
+    position: fixed;
+    background: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 13em;
+    padding: 1em;
+}
+
+.main {
+    padding: 13em 1em 0 1em;
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+    max-height: 5em;
+    overflow-y: auto;
+}
+
+.menu a {
+    color: #0062cc;
+    text-decoration: none;
+    transition: ease 300ms;
+}
+
+.menu a:hover {
+    color: rgb(25, 25, 25);
+}
+
+.menu li {
+    display: block;
+    margin: 0 0 1em 0;
+    list-style-type: none;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+@media screen and (min-width: 769px) {
+
+    section {
+        margin-bottom: 3em;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .navbar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 30%;
+        height: auto;
+    }
+
+    .menu {
+        max-height: 100%;
+        overflow: hidden;
+    }
+
+    .main {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: auto;
+        padding: 2em;
+    }
+
+}
+
+
+@media screen and (min-width: 992px) {
+
+    .navbar {
+        width: 20%;
+    }
+
+    .main {
+        width: 80%;
+    }
+
+}

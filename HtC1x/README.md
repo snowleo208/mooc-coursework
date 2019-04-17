@@ -6,3 +6,4 @@ This course is using Beginning Student Language (BSL) and you can open it via Dr
 
 > Note: My environment is Windows 10 / Linux with DrRacket version 7.2.
 
+Course Link: [How to Code: Simple Data](https://www.edx.org/course/how-code-simple-data-ubcx-htc1x)

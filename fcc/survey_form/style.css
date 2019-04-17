@@ -1,0 +1,134 @@
+body {
+    font-family: 'Roboto', 'Open Sans', 'Gill Sans MT',
+    'Gill Sans', Corbel, Arial, 'sans-serif';
+    font-size: 1em;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-display: swap;
+}
+
+h1 {
+    font-family: 'Lato', 'Open Sans', 'Gill Sans MT',
+    'Gill Sans', Corbel, Arial, 'sans-serif';
+}
+
+label {
+    font-size: 0.9rem;
+    margin: 0 0 0.5em 0;
+}
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]), textarea, select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 0.7em;
+    background: white;
+    border: solid 1px rgb(25,25,25,.2);
+    border-radius: 0.2em;
+    transition: ease 300ms;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid #009ee8 !important;
+}
+
+input:required:invalid:hover {
+    border: 1px solid #ff5252 !important;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+.form-header {
+    background: #009ee8;
+    color: white;
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+}
+
+.form-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 1em;
+}
+
+.form-group .row {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+}
+
+.form-group.gender .row {
+    margin-bottom: 0;
+}
+
+.form-group.destination {
+    margin-bottom: 0;
+}
+
+.form-group.row label {
+    font-weight: normal;
+    margin: 0;
+}
+
+.form-group.gender .row input {
+    margin-right: 0.5em;
+}
+
+.form-group.destination .row input {
+    margin-right: 0.5em;
+}
+
+.form-group + .form-submit {
+    margin-top: 1em;
+}
+
+.label-required:after {
+    content: ' *';
+    color: #ff5252;
+}
+
+.form-submit {
+    background: #009ee8;
+    color: white;
+    border: 0;
+    padding: 0.8em 2em;
+    transition: ease 300ms;
+    cursor: pointer;
+}
+
+.form-submit:hover {
+    opacity: 0.9;
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        flex-direction: row;
+        max-width: 70vw;
+        padding: 3em;
+    }
+
+    .form-container {
+        padding: 2em;
+    }
+
+    .form-header {
+        flex: 1 1 30%;
+        margin-bottom: 0;
+    }
+}
