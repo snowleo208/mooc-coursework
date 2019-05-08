@@ -26,3 +26,7 @@ In this module you will learn how to design compound data definitions to represe
 (pos? "hello") ;predicate: false
 
 ```
+
+## HtDW With Compound Data
+
+- each function should only do one task, need to create helper function to do another task
