@@ -79,3 +79,108 @@ fun f x = (* f has type mytype -> int *)
 - Extracts data and binds to variables local to that branch
 - Type-checking: all branches must have same type
 - Evaluation: evaluate between case … of and the right branch
+
+### Type
+
+A datatype binding introduces a new type name
+Distinct from all existing types
+Only way to create values of the new type is the constructors
+
+Example: `type aname = t`
+
+### Option are datatypes
+
+- Options are just a predefined datatype binding
+- NONE and SOME are constructors, not just functions
+- So use pattern-matching not isSome and valOf
+  > No missing cases, no exceptions for wrong variant, etc.
+
+Example:
+
+```ml
+fun inc_or_zero_intoption =
+    case intoption of
+        NONE => 0
+      | SOME i => i + 1
+```
+
+### Nested patterns
+
+- Nested patterns can lead to very elegant, concise code
+- Avoid nested case expressions if nested patterns are simpler and avoid unnecessary branches or let-expressions
+
+```ml
+(* Example: avoid nested case expressions *)
+
+fun zip3 list_triple =
+    case list_triple of
+	([],[],[]) => []
+      | (hd1::tl1,hd2::tl2,hd3::tl3) => (hd1,hd2,hd3)::zip3(tl1,tl2,tl3)
+      | _ => raise ListLengthMismatch
+
+fun unzip3 lst =
+    case lst of
+	[] => ([],[],[])
+      | (a,b,c)::tl => let val (l1,l2,l3) = unzip3 tl
+		       in
+			   (a::l1,b::l2,c::l3)
+		       end
+```
+
+- A common idiom is matching against a tuple of datatypes to compare them
+- Wildcards are good style: use them instead of variables when you do not need the data
+
+```ml
+(* Example: nested pattern-matching often convenient even without recursion;
+   also the wildcard pattern is good style
+*)
+datatype sgn = P | N | Z
+
+fun multsign (x1,x2) =
+  let fun sign x = if x=0 then Z else if x>0 then P else N
+  in
+      case (sign x1,sign x2) of
+	  (Z,_) => Z
+	| (_,Z) => Z
+	| (P,P) => P
+	| (N,N) => P
+	| _     => N (* many say bad style; I am okay with it *)
+  end
+```
+
+### Exception
+
+An exception binding introduces a new kind of exception
+
+```ml
+exception MyFirstException
+exception MySecondException of int * int
+```
+
+The raise primitive raises (a.k.a. throws) an exception
+
+```ml
+raise MyFirstException
+raise (MySecondException(7,9))
+```
+
+A handle expression can handle (a.k.a. catch) an exception
+
+> If doesn’t match, exception continues to propagate
+
+```ml
+el handle MyFirstException => e2
+el handle MySecondException(x,y) => e2
+```
+
+### Tail Recursion
+
+There is a methodology that can often guide this transformation:
+
+- Create a helper function that takes an accumulator
+- Old base case becomes initial accumulator
+- New base case becomes final accumulator
+
+** beware list-append, especially within outer recursion **
+
+> maybe no so efficient than you think
