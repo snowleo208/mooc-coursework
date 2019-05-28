@@ -12,8 +12,8 @@
 (define WIDTH  300)
 (define HEIGHT 500)
 
-(define INVADER-X-SPEED 0.6)  ;speeds (not velocities) in pixels per tick
-(define INVADER-Y-SPEED 0.6)
+(define INVADER-X-SPEED 1.5)  ;speeds (not velocities) in pixels per tick
+(define INVADER-Y-SPEED 1.5)
 (define TANK-SPEED 2)
 (define MISSILE-SPEED 10)
 
@@ -152,7 +152,6 @@
 
 ;; Game -> Game
 ;; generate game's state
-;(check-expect (gen-game G0) (make-game empty empty (make-tank (+ (/ WIDTH 2) TANK-SPEED) 1))) ;only tamk
 (check-expect (gen-game G3) (make-game (list (make-invader (+ (invader-x I2) (* INVADER-X-SPEED (invader-dx I2)))
                                                            (+ (invader-y I2) INVADER-Y-SPEED) (invader-dx I2)))
                                        (list (make-missile (missile-x M1) (- (missile-y M1) MISSILE-SPEED)))
@@ -250,8 +249,8 @@
 
 (define (create-invader loi)
   (cond [(>= (length loi) INVADE-RATE) loi]
-        [(< (random 250) INVADE-RATE)
-         (cons (make-invader (random WIDTH) 0 12) loi)]
+        [(< (random 500) INVADE-RATE)
+         (cons (make-invader (random WIDTH) 0 6) loi)]
         [else loi]))
 
 ;; ListOfMissles, ListOfInvaders -> ListOfMissle
