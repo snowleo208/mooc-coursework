@@ -7,7 +7,7 @@ public class TheGreatest {
         int n = 0;
 
         while(n < list.size()) {
-            if(list.get(n) > result) {
+            if(result == 0 || list.get(n) > result) {
                 result = list.get(n);
             }
             n++;

@@ -5,7 +5,13 @@ public class MoreThanOnce {
 
     public static boolean moreThanOnce(ArrayList<Integer> list, int searched) {
         // write your code here
-        return false;
+        int times = 0;
+        for (int n : list) {
+            if(n == searched) {
+                times += 1;
+            }
+        }
+        return times > 1;
     }
 
     public static void main(String[] args) {

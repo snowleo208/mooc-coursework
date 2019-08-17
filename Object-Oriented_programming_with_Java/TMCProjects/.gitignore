@@ -1,2 +1,5 @@
 .idea
 *.txt
+nbproject
+test
+lib
