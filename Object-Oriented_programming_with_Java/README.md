@@ -10,13 +10,13 @@ If you are interested in my solutions, use `git clone` to get a copy to your loc
 
 Compile the Java File to a `.class` file
 
-```
-javac <FILENAME>.java
+```java
+javac *.java
 ```
 
 This will create a `<FILENAME>.class` file.
 
-Run the Java file:
+Run the Java file (without extension, i.e. `.java`):
 
 ```java
 java <FILENAME>
