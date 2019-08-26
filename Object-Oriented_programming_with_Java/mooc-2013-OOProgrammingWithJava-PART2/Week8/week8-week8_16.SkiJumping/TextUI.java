@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class TextUI {
     private Scanner reader;
@@ -30,6 +31,8 @@ public class TextUI {
             this.list.add(newcomer);
         }
 
+        System.out.println("");
+
         // start tournament
         this.startTournament();
 
@@ -38,24 +41,56 @@ public class TextUI {
         System.out.println("");
         System.out.println("Tournament results: ");
         System.out.println("Position    Name");
+
+        Collections.sort(this.list);
+        Collections.reverse(this.list);
+
+        // print sorted results
+        for (int i = 0; i < this.list.size(); i++) {
+            Participant p = this.list.get(i);
+
+            System.out.println(Integer.toString((i+1)) + "           " + p);
+            System.out.print("            jump lengths: ");
+
+            int j = 0;
+            while(j < p.getLengthList().size()) {
+                System.out.print(p.getLengthList().get(j));
+                System.out.print(" m");
+                if(j < p.getLengthList().size() -1) {
+                    System.out.print(", ");
+                }
+                j++;
+            }
+
+            System.out.println("");
+        }
+
     }
 
     public void startTournament() {
         System.out.println("The tournament begins!");
+        System.out.println("");
 
         while(true) {
-            System.out.print("Write \"jump\" to jump; otherwise you quit: ");
+            System.out.println("Write \"jump\" to jump; otherwise you quit: ");
             String command = reader.nextLine();
+//            System.out.println("");
 
             if(command.equals("jump")) {
                 System.out.print("Round ");
                 System.out.print(this.getRound());
                 System.out.println("");
+                System.out.println("");
 
                 System.out.println("Jumping order:");
+
+                Collections.sort(this.list);
                 for (int i = 0; i < this.list.size(); i++) {
-                    System.out.println((i + 1) + ": " + this.list.get(i));
+                    System.out.print("  ");
+                    System.out.print((i + 1) + ". " + this.list.get(i));
+                    System.out.println("");
                 }
+                System.out.println("");
 
                 System.out.print("Results of round ");
                 System.out.print(this.getRound());
@@ -70,12 +105,9 @@ public class TextUI {
                     System.out.println("  " + p.getName());
                     System.out.println("    length: " + p.getLength());
 
-                    StringBuilder sb = new StringBuilder();
-                    for (Integer number : p.getCurrentRoundScores()) {
-                        sb.append(number != null ? number.toString() + ", " : "");
-                    }
-                    System.out.println("    judge votes: [" + sb.toString() +"]");
+                    System.out.println("    judge votes: " + Arrays.toString(p.getCurrentRoundScores()));
                 }
+                System.out.println("");
 
             } else if(command.equals("quit")) {
                 break;
